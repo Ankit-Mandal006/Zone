@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Hostel Zone</title>
+    <link rel="stylesheet" href="homeStyle.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">Hostel Zone</div>
+        
+        <!-- User Profile -->
+        <div class="profile" onclick="toggleProfileMenu()">
+            <img src="profile-icon.png" alt="Profile" class="profile-icon">
+            <div class="profile-menu" id="profileMenu">
+                <a href="EditProfile.html">✏️ Edit Profile</a>
+                <a href="ViewProfile.html">👤 View Profile</a>
+            </div>
+        </div>
+
+        <!-- Menu Icon -->
+        <div class="menu" onclick="toggleMenu()">≡</div>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown" id="menuDropdown">
+            <a href="#">🛍️ Sell Items</a>
+            <a href="#">💼 Post Service</a>
+            <a href="#">📢 Post Ad</a>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <!-- Category Section -->
+    <div class="category-section">
+        <h3>Categories</h3>
+        <div class="categories">
+            <a href="snacks.html" class="category">Snacks & Drinks</a>
+            <a href="services.html" class="category">Services</a>
+            <a href="secondhand.html" class="category">2nd Hand Items</a>
+            <a href="ads.html" class="category">Advertisements</a>
+        </div>
+    </div>
+
+    <!-- Trending Section -->
+    <div class="trending-section">
+        <h3>Trending</h3>
+        <div class="trending-items">
+            <div class="item">🔥 Popular Item 1</div>
+            <div class="item">🚀 Popular Item 2</div>
+            <div class="item">💼 Popular Service</div>
+            <div class="item">📢 Hot Advertisement</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menuDropdown");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        function toggleProfileMenu() {
+            var profileMenu = document.getElementById("profileMenu");
+            profileMenu.style.display = profileMenu.style.display === "block" ? "none" : "block";
+        }
+
+        document.addEventListener("click", function(event) {
+            var menu = document.getElementById("menuDropdown");
+            var menuBtn = document.querySelector(".menu");
+            var profileMenu = document.getElementById("profileMenu");
+            var profileBtn = document.querySelector(".profile");
+
+            if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+                menu.style.display = "none";
+            }
+            if (!profileMenu.contains(event.target) && !profileBtn.contains(event.target)) {
+                profileMenu.style.display = "none";
+            }
+        });
+    </script>
+
+    <style>
+        .profile {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .profile-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .profile-menu a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .profile-menu a:hover {
+            background: #f0f0f0;
+        }
+    </style>
+
+</body>
+</html>
