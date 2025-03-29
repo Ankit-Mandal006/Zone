@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <script type="module" src="EditProfile.js"></script>
 </head>
 <body>
+    <h2>Edit Profile</h2>
 
-    <div class="container">
-        <h2>Edit Profile</h2>
-        
-        <label for="fullName">Full Name</label>
-        <input type="text" id="fullName" placeholder="Enter your full name">
+    <label>Full Name:</label>
+    <input type="text" id="fullName"><br>
 
-        <label for="github">GitHub</label>
-        <input type="text" id="github" placeholder="GitHub Profile Link">
+    <label>GitHub:</label>
+    <input type="text" id="github"><br>
 
-        <label for="linkedin">LinkedIn</label>
-        <input type="text" id="linkedin" placeholder="LinkedIn Profile Link">
+    <label>LinkedIn:</label>
+    <input type="text" id="linkedin"><br>
 
-        <label for="portfolio">Portfolio</label>
-        <input type="text" id="portfolio" placeholder="Portfolio Website Link">
+    <label>Portfolio:</label>
+    <input type="text" id="portfolio"><br>
 
-        <button id="saveProfile">Save Profile</button>
-        <a href="viewProfile.html">View Profile</a>
-    </div>
+    <label>Hostel:</label>
+    <select id="hostel">
+        <option value="Paari">Paari</option>
+        <option value="Kaari">Kaari</option>
+        <option value="Adhiyama">Adhiyama</option>
+        <option value="Agasthiyar">Agasthiyar</option>
+    </select><br>
 
-    <script type="module" src="EditProfile.js"></script>
+    <button id="saveProfile">Save Profile</button>
 </body>
 </html>
